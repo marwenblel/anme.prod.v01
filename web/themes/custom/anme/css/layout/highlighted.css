@@ -1,0 +1,160 @@
+/*CSS for #block-anme-views-block-three-sector-products-block-1 in hightlighted region */
+#highlighted #block-anme-views-block-three-sector-products-block-1 {
+    margin: -120px 0 40px;
+    height: 300px;
+    overflow-y: hidden;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .owl-item {
+    background-color: #f7f6f6;
+    z-index: 99999;
+    /*width: 30%!important;*/
+    height: 300px;
+    margin-right: 20px;
+    border: 1px solid #e5e5e5;
+    padding: 3px;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-view-node {
+    text-align: right;
+    margin-top: 10px;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-field-sector-product-icon {
+    width: 112px;
+    height: 97px;
+    margin-left: 10px;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-field-sector-product-icon img {
+    width: 100%;
+    height: 100%;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-title {
+    text-align: center;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-field-sector-product-description .field-content {
+    font-family: Corbel;
+    color: #8d8c8c;
+    line-height: 23.5px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+
+    word-wrap: break-word;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow.png") no-repeat 92% 10px;
+    padding: 7px 28px 7px 10px;
+    border: 1px solid transparent;
+}
+body.lang-ar #highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow-ar.png") no-repeat 92% 10px;
+    background-position: left;
+    padding: 7px 28px 7px 15px;
+    border: 1px solid transparent;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-view-node a:hover {
+    color: #f7ab59;
+    color: #f7ab59;
+    border-color: #46a5f7;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-1 .views-field-title a {
+    font-family: Constantia;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-1 .row .col:first-child .views-field-title a {
+    color: #9e3377;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .row .col:nth-child(2) .views-field-title a {
+    color: #08bbdc;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-1 .row .col:nth-child(3) .views-field-title a {
+    color: #87ba31;
+}
+
+/*CSS for #block-anme-views-block-three-sector-products-block-4 in hightlighted region */
+#highlighted #block-anme-views-block-three-sector-products-block-4 {
+    margin: -120px 0 40px;
+    height: 300px;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .row .col {
+    background-color: #f7f6f6;
+    z-index: 99999;
+    /*width: 30%!important;*/
+    height: auto;
+    margin-right: 20px;
+    border: 1px solid #e5e5e5;
+    padding: 3px;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-view-node {
+    text-align: right;
+    margin-top: 10px;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-field-sector-product-icon {
+    width: 112px;
+    height: 97px;
+    margin-left: 10px;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-field-sector-product-icon img {
+    width: 100%;
+    height: 100%;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-title {
+    text-align: center;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-field-sector-product-description .field-content {
+    font-family: Corbel;
+    color: #8d8c8c;
+    line-height: 23.5px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+
+    word-wrap: break-word;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow.png") no-repeat 92% 10px;
+    padding: 7px 28px 7px 10px;
+    border: 1px solid transparent;
+}
+body.lang-ar #highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow-ar.png") no-repeat 92% 10px;
+    background-position: left;
+    padding: 7px 28px 7px 15px;
+    border: 1px solid transparent;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-view-node a:hover {
+    color: #f7ab59;
+    color: #f7ab59;
+    border-color: #46a5f7;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-4 .views-field-title a {
+    font-family: Constantia;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+#highlighted #block-anme-views-block-three-sector-products-block-4 .row .col:first-child .views-field-title a {
+    color: #9e3377;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .row .col:nth-child(2) .views-field-title a {
+    color: #08bbdc;
+}
+#highlighted #block-anme-views-block-three-sector-products-block-4 .row .col:nth-child(3) .views-field-title a {
+    color: #87ba31;
+}

@@ -1,0 +1,12 @@
+body.lang-ar p,
+body.lang-ar ul li a {
+    text-align: right;
+}
+.lang-ar h1,
+.lang-ar h2,
+.lang-ar h3,
+.lang-ar h4,
+.lang-ar h5,
+.lang-ar h6 {
+    text-align: right;
+}

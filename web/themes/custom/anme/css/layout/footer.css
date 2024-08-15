@@ -1,0 +1,23 @@
+#footer {
+    background-color: #009acd;
+}
+#footer.container {
+    max-width: 1400px;
+}
+#footer #block-anme-copyrights,
+#footer #block-anme-powredby {
+    font-family: Corbel;
+    color: #fff;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 300;
+}
+#footer #block-anme-powredby p {
+    text-align: right;
+}
+body.lang-ar #footer #block-anme-powredby p {
+    text-align: left;
+}
+body.lang-ar #footer #block-anme-copyrights p {
+    text-align: right;
+}

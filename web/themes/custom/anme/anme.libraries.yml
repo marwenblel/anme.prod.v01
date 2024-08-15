@@ -1,0 +1,68 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base/style.css: {}
+      css/base/fix.css: {}
+      css/base/rtl/rtl.css: {}
+      css/bootstrap/bootstrap.min.css: {}
+      css/base/responsive/responsive-all.css: {}
+      css/base/responsive/responsive-front.css: {}
+      css/base/responsive/responsive-gp.css: {}
+      css/base/responsive/responsive-cp.css: {}
+      css/base/responsive/responsive-tp.css: {}
+      css/base/responsive/responsive-pr.css: {}
+      css/base/responsive/responsive-news.css: {}
+    layout:
+      css/layout/header.css: {}
+      css/layout/top-header-first.css: {}
+      css/layout/top-header-second.css: {}
+      css/layout/highlighted-header-first.css: {}
+      css/layout/highlighted-header-second.css: {}
+      css/layout/highlighted-header-last.css: {}
+      css/layout/highlighted.css: {}
+      css/layout/content.css: {}
+      css/layout/sidebar-second.css: {}
+      css/layout/content-bottom.css: {}
+      css/layout/footer-top.css: {}
+      css/layout/footer-content.css: {}
+      css/layout/footer.css: {}
+
+      css/layout/region-sidebar-second.css: {}
+
+      css/pages/front.css: {}
+      css/pages/gp.css: {}
+      css/pages/cp.css: {}
+      css/pages/tp.css: {}
+      css/pages/press.css: {}
+      css/pages/assistance.css: {}
+      css/pages/search.css: {}
+
+      css/nodes/sector.css: {}
+      css/nodes/news.css: {}
+      css/nodes/basic-page.css: {}
+      css/nodes/project.css: {}
+      css/nodes/sector-product.css: {}
+
+      css/views/all.css: {}
+      css/views/projects.css: {}
+      css/views/calls-for-tenders.css: {}
+      css/views/news.css: {}
+  js:
+    js/bootstrap/bootstrap.min.js: {}
+    js/responsive-all.js: {}
+    js/responsive-front.js: {}
+    js/responsive-gp.js: {}
+    js/responsive-cp.js: {}
+    js/responsive-tp.js: {}
+    js/responsive-press.js: {}
+    js/responsive-news.js: {}
+    js/amne-main-nav.js: {}
+    js/sector-statistics-tab.js: {}
+    js/top-toggle.js: {}
+    js/nav-toggle.js: {}
+    js/calls-4-tenders-page.js: {}
+
+
+  dependencies:
+    - core/jquery

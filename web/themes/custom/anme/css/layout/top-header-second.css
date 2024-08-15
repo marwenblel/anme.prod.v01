@@ -1,0 +1,27 @@
+/*css for block-anme-anme-site-logo */
+#block-anme-anme-site-logo img {
+    width: 200px;
+    height: 111px;
+}
+body.lang-ar #block-anme-anme-site-logo img {
+    float: right;
+}
+/*css for block-anme-search-form */
+#top-header-second #block-anme-search-form {
+    top:10px;
+}
+#top-header-second #block-anme-search-form input.form-search {
+    outline: none;
+    border: 1px solid #dfdfdf;
+    background: #f7f6f6;
+    width: 315px;
+    height: 45px;
+    padding-left: 20px;
+    float: right;
+}
+body.lang-ar #top-header-second #block-anme-search-form input.form-search {
+    float: left;
+}
+#top-header-second #block-anme-search-form div.form-actions {
+    display: none;
+}

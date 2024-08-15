@@ -1,0 +1,9 @@
+body.page-type-news_events #sidebar-second {
+    margin-top: 30px;
+}
+body.page-type-news_events #content #block-anme-content article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+}

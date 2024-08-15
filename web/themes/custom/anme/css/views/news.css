@@ -1,0 +1,4 @@
+body.path-news #main.row,
+body.path-news #content.col-8 {
+    all: unset!important;
+}

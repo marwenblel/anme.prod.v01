@@ -1,0 +1,66 @@
+#highlighted-header-first {
+
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu ul {
+    list-style: none;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li {
+    display: inline;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li a {
+    font-size: 13px;
+    font-weight: 700;
+    background: #eee;
+    color: #000;
+    text-align: center;
+    height: 30px;
+    max-width: 22%;
+    display: inline-block;
+    width: 160px;
+    min-width: 160px;
+    position: relative;
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 34px;
+    margin-left: -5px;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    left: 25px;
+    font-family: Corbel;
+}
+body.lang-ar #highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li a {
+    right: 15px;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:first-child a {
+    background-color: #00a3da;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(2) a {
+    background-color: #465b94;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(3) a {
+    background-color: #ffa000;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(4) a {
+    background-color: #8ab882;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:first-child a:hover,
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:first-child a.is-active {
+    background-color: #00a3da;
+    color: #ffffff;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(2) a:hover,
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(2) a.is-active {
+    background-color: #465b94;
+    color: #ffffff;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(3) a:hover,
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(3) a.is-active {
+    background-color: #ffa000;
+    color: #ffffff;
+}
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(4) a:hover,
+#highlighted-header-first .region-highlighted_header_first #block-anme-tabsmenu li:nth-child(4) a.is-active {
+    background-color: #8ab882;
+    color: #ffffff;
+}

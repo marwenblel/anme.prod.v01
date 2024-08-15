@@ -1,0 +1,110 @@
+body.path-calls-for-tenders #main.row,
+body.path-calls-for-tenders #content.col-8 {
+    all: unset!important;
+}
+
+/* Container styling */
+.calls-for-tenders .js-form-item {
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.calls-for-tenders .js-form-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Select box styling */
+.calls-for-tenders .js-form-item .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Button styling */
+.calls-for-tenders .form-actions .button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.calls-for-tenders .form-actions .button:hover {
+    background-color: #0056b3;
+}
+
+/* General styling for the list */
+.calls-for-tenders ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.calls-for-tenders li {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for the date */
+.calls-for-tenders .views-field-created {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Styling for the title */
+.calls-for-tenders .views-field-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calls-for-tenders .views-field-title a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.calls-for-tenders .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the document */
+.calls-for-tenders .views-field-field-call-for-tender-pdf-file {
+    margin-top: 10px;
+}
+
+.calls-for-tenders .field-content .file--application-pdf a {
+    color: #FF6347;
+    text-decoration: none;
+}
+
+.calls-for-tenders .field-content .file--application-pdf a:hover {
+    text-decoration: underline;
+}
+
+.calls-for-tenders .field-content .file--application-pdf span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Additional styling for better structure */
+.calls-for-tenders li > div {
+    margin-bottom: 5px;
+}
+
+.calls-for-tenders .visually-hidden {
+    display: none;
+}

@@ -1,0 +1,82 @@
+body.page-type-project #content #block-anme-content article.project-node .field-project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+body.page-type-project #sidebar-second {
+    margin-top: 30px;
+}
+
+
+body.page-type-project #content #block-anme-content article.project-node {
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: Corbel !important;
+    text-indent: 15px;
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content ul {
+    list-style: none;
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content ul li {
+    padding-left: 25px;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 17px;
+    position: relative;
+    font-weight: 300;
+    text-indent: 10px;
+}
+body.lang-ar.page-type-project #content #block-anme-content article.project-node .field-project-content ul li {
+    text-align: right;
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content ul li::before {
+    content: "";
+    background: url('../../images/icons/puce.png');
+    height: 10px;
+    width: 13px;
+    display: inline-block;
+    margin-right: 10px;
+}
+body.lang-ar.page-type-project #content #block-anme-content article.project-node .field-project-content ul li::before {
+    margin-left: 10px;
+}
+body.page-type-project #content #block-anme-content article.project-node .field-project-content table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed */
+    margin: 20px 0; /* Adds margin around the table */
+}
+
+body.page-type-project #content #block-anme-content article.project-node .field-project-content th,
+body.page-type-project #content #block-anme-content article.project-node .field-project-content td {
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+body.lang-ar.page-type-project #content #block-anme-content article.project-node .field-project-content th,
+body.lang-ar.page-type-project #content #block-anme-content article.project-node .field-project-content td {
+    text-align: right;
+}
+
+body.page-type-project #content #block-anme-content article.project-node .field-project-content th {
+    background-color: #f4f4f4; /* Light gray background for headers */
+    font-weight: bold; /* Bold text for headers */
+}
+
+body.page-type-project #content #block-anme-content article.project-node .field-project-content tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for even rows */
+}
+
+body.page-type-project #content #block-anme-content article.project-node .field-project-content tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}

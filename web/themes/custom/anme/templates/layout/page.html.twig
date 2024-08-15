@@ -1,0 +1,138 @@
+<div id="page-wrapper">
+  <div id="page">
+    <div id="header">
+      <div class="content">
+          <!-- Begin Top header first-->
+          {% if page.top_header_first %}
+              <button id="toggle-button"></button>
+              <div id="top-header-first">
+                  <div class="container">
+                      {{ page.top_header_first }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Top header first-->
+
+          <!-- Begin Top header second-->
+          {% if page.top_header_second %}
+              <div id="top-header-second">
+                  <div class="container">
+                      {{ page.top_header_second }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Top header second-->
+
+          <!-- Begin Highlighted header first-->
+          {% if page.highlighted_header_first %}
+              <div id="highlighted-header-first" class="container">
+                  <div class="row justify-content-md-center">
+                      {{ page.highlighted_header_first }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Highlighted header first-->
+
+          <!-- Begin Highlighted header second-->
+          {% if page.highlighted_header_second %}
+              <div id="highlighted-header-second" class="container">
+                  <div class="row">
+                      {{ page.highlighted_header_second }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Highlighted header second-->
+
+
+          <!-- Begin Highlighted header last-->
+          {% if page.highlighted_header_last %}
+              <div id="highlighted-header-last" class="container">
+                  <div class="content">
+                      {{ page.highlighted_header_last }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Highlighted header last-->
+
+
+          <!-- Begin Highlighted-->
+          {% if page.highlighted %}
+              <div id="highlighted" class="container">
+                  <div class="content">
+                      {{ page.highlighted }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Highlighted-->
+
+      </div>
+    </div> <!--End Header-->
+    <div id="main-wrapper" class="container">
+      <div id="main" class="row">
+
+          <!-- Begin Content-->
+          {% if page.content %}
+              <div id="content" class="col-8">
+                  <div class="content">
+                      {{ page.content }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Content-->
+
+
+          <!-- Begin Sidebar second-->
+          {% if page.sidebar_second %}
+              <div id="sidebar-second" class="col-4">
+                  <div class="content">
+                      {{ page.sidebar_second }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Sidebar second-->
+
+          <!-- Begin Content bottom-->
+          {% if page.content_bottom %}
+              <div id="content-bottom">
+                  <div class="content">
+                      {{ page.content_bottom }}
+                  </div>
+              </div>
+          {% endif %}
+          <!--End Content bottom-->
+
+      </div>
+    </div>
+    <div id="footer-wrapper">
+
+
+        <!-- Begin Footer top-->
+        {% if page.footer_top %}
+            <div id="footer-top" class="container">
+                <div class="row justify-content-md-center">
+                    {{ page.footer_top }}
+                </div>
+            </div>
+        {% endif %}
+        <!--End Footer top-->
+
+
+        <!-- Begin Footer content -->
+        {% if page.footer_content %}
+            <div id="footer-content" class="container">
+                {{ page.footer_content }}
+            </div>
+        {% endif %}
+        <!--End Footer content -->
+
+
+        <!-- Begin Footer -->
+        {% if page.footer %}
+            <div id="footer" class="container">
+                    {{ page.footer }}
+            </div>
+        {% endif %}
+        <!--End Footer -->
+    </div>
+  </div>
+</div>

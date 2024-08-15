@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Anme</title>
+        <!-- <link rel="stylesheet" href="./style.css"> -->
+
+    </head>
+    <style>
+        .carousel-root,
+        .carousel-root * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .carousel-root {
+            position: relative;
+            display: none;
+        }
+
+        .carousel-root .viewport {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-root .slides {
+            position: relative;
+        }
+
+        .carousel-root .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.5s;
+            background-color: #f0f0f0;
+        }
+
+        .carousel-root .slide.selected {
+            opacity: 1;
+            position: relative;
+            z-index: 10;
+        }
+
+        .carousel-root .slide>img {
+            display: block;
+            width: 100%;
+        }
+
+        .carousel-root .pager {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .carousel-root .pager-button {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 15px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .carousel-root .pager-button.selected {
+            background-color: orange;
+            cursor: default;
+        }
+
+        .carousel-root .arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -36px;
+            cursor: pointer;
+            width: 34px;
+            height: 72px;
+            z-index: 10000;
+        }
+
+        .carousel-root .arrow-previous {
+            left: 0;
+            background: url("../images/arrow_left.png") no-repeat;
+        }
+
+        .carousel-root .arrow-next {
+            right: 0;
+            background: url("../images/arrow_right.png") no-repeat;
+        }
+
+        .carousel-root .viewport {
+            padding: 0 80px;
+            min-height: 89px;
+            text-align: center;
+        }
+
+        /*adjust to create left and right open area for arrows, min-height = arrow height*/
+
+        .carousel-root .viewport p {
+            font-style: italic;
+            font-weight: 300;
+            color: #5a2503;
+        }
+
+        .carousel-root .viewport p span {
+            display: block;
+            font-weight: bold;
+            margin-top: 14px;
+            font-style: normal;
+        }
+
+        .carousel-root .pager {
+            display: none;
+        }
+
+        .video-carousel-root,
+        .video-carousel-root * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .video-carousel-root {
+            /* width: 478px; */
+            margin: 0 -204px;
+            position: relative;
+        }
+
+        .video-carousel-viewport {
+            width: 750px;
+            margin: 0 auto;
+            padding: 45px 0;
+            overflow: hidden;
+            /* transform: scale(0.5); */
+        }
+
+        .video-carousel-slider {
+            width: 5000px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .video-carousel-slider>div {
+            float: left;
+            width: 150px;
+            height: 84px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .video-carousel-slider>div p {
+            display: none;
+        }
+
+        .video-carousel-slider div.level1 {
+            z-index: 1;
+        }
+
+        .video-carousel-slider div.level2 {
+            z-index: 2;
+        }
+
+        .video-carousel-slider div.level3 {
+            z-index: 3;
+        }
+
+        .video-carousel-slider div .panel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            -moz-transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+            -o-transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+            -webkit-transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+            transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+        }
+
+        .video-carousel-slider div.level2 .panel {
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+        }
+
+        .video-carousel-slider div.level3 .panel {
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+        }
+
+        .video-carousel-slider div .panel .poster {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-carousel-slider div .panel .poster img:first-child {
+            width: 100%;
+            height: 100%;
+            display: block;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            opacity: 0.5;
+        }
+
+        .video-carousel-slider div .panel .poster .button {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -24px;
+            margin-left: -24px;
+            width: 48px;
+            height: 48px;
+        }
+
+        .video-carousel-slider div.level3 .panel .poster img {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .video-carousel-slider div.level3 .panel .poster .button {
+            display: block;
+        }
+
+        .video-carousel-slider div .panel .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-carousel-button-left {
+            position: absolute;
+            top: 75px;
+            left: -40px;
+            cursor: pointer;
+        }
+
+        .video-carousel-button-right {
+            position: absolute;
+            top: 75px;
+            right: -40px;
+            cursor: pointer;
+        }
+
+        .video-carousel-text {
+            width: 280px;
+            margin: 8px auto;
+            text-align: center;
+            font-size: 14px;
+            font-family: Roboto, Arial, sans-serif;
+            color: #4d4e53;
+        }
+
+        .video-carousel-text span {
+            font-weight: bold;
+            display: block;
+        }
+
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        .video-carousel-slider div .panel {
+            -webkit-box-shadow: 0 10px 10px -5px rgba(122, 122, 122, 1);
+            -moz-box-shadow: 0 10px 10px -5px rgba(122, 122, 122, 1);
+            box-shadow: 0 10px 10px -5px rgba(122, 122, 122, 1);
+        }
+
+        .video-carousel-slider div.level3 .panel {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .video-carousel-root .vjs-big-play-button {
+            display: none !important;
+        }
+
+        div#videos {
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 500px;
+        }
+
+        html {
+            height: 400px;
+            background-image: linear-gradient(180deg, #1E88E5, #fff);
+            background-repeat: no-repeat;
+        }
+
+        .inner {
+            padding: 100px 0;
+        }
+    </style>
+
+    <body>
+        <!-- partial:index.partial.html -->
+        <div id="videos">
+            <div class="inner">
+                <div class="video-carousel-root">
+                    <div class="video-carousel-viewport">
+                        <div class="video-carousel-slider clearfix" style="left: 0px;">
+
+                            <div id="video_desktop_8_GL" class="level1" data-vimeo-id="181712424">
+                                <div class="panel">
+                                    <div class="poster">
+                                      <iframe class="latestVideoEmbed" id="2" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+  
+
+                                        <!--<img src="images/video-carousel/poster-GL.jpg" alt="video poster 8">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Never experience an outage again</p>
+                            </div>
+                            <!--start of additional video-->
+                            <div id="video_desktop_8_GL" class="level1" data-vimeo-id="181712424">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="1" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-GL.jpg" alt="video poster 8">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Never experience an outage again</p>
+                            </div>
+                            <!--End of additional-->
+
+
+
+                            <!--start of additional video-->
+                            <div id="video_desktop_8_GL" class="level1" data-vimeo-id="181712424">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="0" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-GL.jpg" alt="video poster 8">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Oil system Overview</p>
+                            </div>
+                            <!--End of additional-->
+
+                            <!--start of additional video-->
+                            <div id="video_desktop_8_GL" class="level1" data-vimeo-id="181712424">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="3" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-GL.jpg" alt="video poster 8">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Overview</p>
+                            </div>
+                            <!--End of additional-->
+
+                            <!--start of additional video-->
+                            <div id="video_desktop_8_GL" class="level1" data-vimeo-id="181712424">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="4" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-GL.jpg" alt="video poster 8">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Sniffers</p>
+                            </div>
+                            <!--End of additional-->
+
+                            <div id="video_desktop_9_HW" class="level2" data-vimeo-id="266215788">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="5" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-HW.jpg" alt="video poster 9">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>How it works</p>
+                            </div>
+                            <div id="video_desktop_2_Portables" class="level3" data-vimeo-id="181712432">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="6" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-Portables.jpg" alt="video poster 2">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Support your whole home</p>
+                            </div>
+                            <div id="video_desktop_3_MD" class="level2" data-vimeo-id="o2l40MGUhIc">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="7" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+<iframe class="latestVideoEmbed" id="8" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-MD.jpg" alt="video poster 3">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+                                    </div>
+                                </div>
+                                <p>Get tremendous peace of mind</p>
+                            </div>
+                            <div id="video_desktop_4_LT" class="level1" data-vimeo-id="181712429">
+                                <div class="panel">
+                                    <div class="poster">
+                                        <iframe class="latestVideoEmbed" id="8" cid="UCRoYsvfnWUwxulbYEV2YvZA"
+                                            width="100%" height="100%" autoplay="0" frameborder="0"
+                                            allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <!--<img src="images/video-carousel/poster-LT.jpg" alt="video poster 4">
+                                    <img class="button" src="images/video-carousel/playButton.png" alt="">-->
+
+                                    </div>
+                                </div>
+                                <p>Protect against cyber terrorism</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-carousel-text" style="display: none;">Support your whole home</div>
+                    <img class="video-carousel-button-left"
+                        src="http://www.installgenerac.com/images/video-carousel/arrow_left.png"
+                        alt="video carousel navigate left">
+                    <img class="video-carousel-button-right"
+                        src="http://www.installgenerac.com/images/video-carousel/arrow_right.png"
+                        alt="video carousel navigate right">
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script>//start video-carousel.js
+
+            $(document).ready(function () {
+
+                var $root = $(".video-carousel-root"),
+                    $slider = $root.find(".video-carousel-slider"),
+                    $slides = $slider.children("div"),
+                    slideWidth = $slides.width(),
+                    $leftButton = $root.find(".video-carousel-button-left"),
+                    $rightButton = $root.find(".video-carousel-button-right"),
+                    $allSlideButtons = $root.find(".video-carousel-button-left, .video-carousel-button-right"),
+                    $slideText = $root.find(".video-carousel-text"),
+                    isAnimating = false,
+                    transition = { "left": slideLeftTransition, "right": slideRightTransition },
+                    slideTimer, myPlayer, video_counter = 0;
+
+                setClasses();
+                setText();
+
+                if (!supportsTransitions()) transition = { "left": slideLeftNoTransition, "right": slideRightNoTransition };
+                $allSlideButtons.click(slideButtonClick);
+                $leftButton.click(transition.left);
+                $rightButton.click(transition.right);
+                //slideTimer = setInterval(transition.right, 7000);
+
+                function slideButtonClick() {
+                    clearInterval(slideTimer);
+                    destroyVideoPlayer();
+                }
+                function slideLeftNoTransition() {
+                    $slider.prepend($slides.last());
+                    setClasses();
+                    setText();
+                }
+                function slideRightNoTransition() {
+                    $slider.append($slides.first());
+                    setClasses();
+                    setText();
+                }
+                function slideLeftTransition() {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    $slideText.empty();
+
+                    $slider.css("left", -slideWidth + "px");
+                    $slider.prepend($slides.last());
+                    setClasses();
+                    $slider.animate({ left: "0px" }, 500, function () {
+                        setText();
+                        isAnimating = false;
+                    });
+                }
+                function slideRightTransition() {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    $slideText.empty();
+
+                    $slider.append($slides.first());
+                    setClasses();
+                    $slider.prepend($slides.last().clone());
+                    $slides = $slider.children("div");
+                    $slider.animate({ left: -slideWidth + "px" }, 500, function () {
+                        $slides.eq(0).remove();
+                        setClasses();
+                        $slider.css("left", "0px");
+                        setText();
+                        isAnimating = false;
+                    });
+                }
+
+
+                function setClasses() {
+                    $slides = $slider.children("div");
+                    $slides.removeClass();
+                    $slides.eq(0).addClass("level1");
+                    $slides.eq(1).addClass("level2");
+                    $slides.eq(2).addClass("level3");
+                    $slides.eq(3).addClass("level2");
+                    $slides.eq(4).addClass("level1");
+
+                    $slides.off("click");
+                    $slides.eq(2).on("click", function () {
+                        var $this = $(this),
+                            player_id = $this.attr("id");
+                        clearInterval(slideTimer);
+                        createVideoPlayer($this.attr("data-vimeo-id"));
+
+                        dataLayer.push({ 'event': 'gaPushEvent', 'gaEventCategory': dataLayer[0].siteVersion + '_homepage', 'gaEventAction': 'click', 'gaEventLabel': player_id });
+
+                        video_counter++;
+                        var s = s_gi(omniture_rsid); s.linkTrackVars = 'eVar5,eVar7,events'; s.eVar5 = video_counter; s.eVar7 = player_id; s.linkTrackEvents = "event5"; s.events = 'event5'; s.tl(this, 'o', 'Home');
+
+                    });
+                    $slides.eq(1).on("click", function () { slideButtonClick(); transition.left(); });
+                    $slides.eq(3).on("click", function () { slideButtonClick(); transition.right(); });
+                }
+                function setText() {
+                    $slideText.html($slides.eq(2).find("p").html());
+                }
+
+                function createVideoPlayer(source) {
+                    var $container = $slides.eq(2).find(".panel"),
+                        playerWidth = $container.width(),
+                        playerHeight = $container.height(),
+                        $iframe = $("<iframe class='video' src='//player.vimeo.com/video/" + source + "?title=0&byline=0&portrait=0' width='300' height='168' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+
+                    $container.append($iframe);
+                    myPlayer = $f($iframe[0]);
+                    $slides.eq(2).off("click");
+                    myPlayer.addEvent('ready', function () {
+                        myPlayer.api("play");
+                        myPlayer.addEvent('finish', destroyVideoPlayer);
+                    });
+                }
+                function destroyVideoPlayer() {
+                    if (myPlayer) {
+                        var $slide = $slides.eq(2);
+                        myPlayer.api("pause");
+                        myPlayer = null;
+                        $slide.find("iframe").remove();
+                        $slides.eq(2).on("click", function () {
+                            createVideoPlayer($(this).attr("data-vimeo-id"));
+                        });
+                    }
+                }
+
+                function supportsTransitions() {
+                    var b = document.body || document.documentElement,
+                        s = b.style,
+                        p = 'transition';
+                    if (typeof s[p] == 'string') { return true; }
+
+                    // Tests for vendor specific prop
+                    var v = ['Moz', 'webkit', 'Webkit', 'Khtml', 'O', 'ms'];
+                    p = p.charAt(0).toUpperCase() + p.substr(1);
+                    for (var i = 0; i < v.length; i++) {
+                        if (typeof s[v[i] + p] == 'string') { return true; }
+                    }
+                    return false;
+                }
+            });
+
+            //start jquery-carousel3.js
+
+            (function ($) {
+
+                $.fn.carousel = function (options) {
+                    return this.each(function () {
+                        var $root = $(this),
+                            $slides = $root.children().addClass("slide"),
+                            $viewport = $("<div class='viewport'/>").appendTo($root),
+                            $slideContainer = $("<div class='slides'/>").append($slides).appendTo($viewport),
+                            $pager = $("<div class='pager'/>").appendTo($root),
+                            $arrowPrevious = $("<div class='arrow arrow-previous'/>").appendTo($viewport),
+                            $arrowNext = $("<div class='arrow arrow-next'/>").appendTo($viewport),
+                            $pagerButtons,
+                            defaults = { showPager: true },
+                            settings = $.extend({}, defaults, options);
+
+                        if (settings.showPager) buildPager();
+                        showSlide(0);
+                        $root.show();
+
+                        $arrowPrevious.click(function () {
+                            showSlide($slideContainer.find(".selected").index() - 1);
+                        });
+                        $arrowNext.click(function () {
+                            showSlide($slideContainer.find(".selected").index() + 1);
+                        });
+
+                        function buildPager() {
+                            for (var i = 0, len = $slides.length; i < len; i++) {
+                                $pager.append("<div class='pager-button'></div>");
+                            }
+                            $pagerButtons = $root.find(".pager-button");
+                            $pagerButtons.click(function () {
+                                showSlide($(this).index())
+                            });
+                        }
+
+                        function showSlide(index) {
+                            if (index == -1) index = $slides.length - 1;
+                            else if (index == $slides.length) index = 0;
+
+                            $slides.removeClass("selected");
+                            $slides.eq(index).addClass("selected");
+
+                            if (settings.showPager) {
+                                $pagerButtons.removeClass("selected");
+                                $pagerButtons.eq(index).addClass("selected");
+                            }
+                        }
+                    });
+                };
+            }(jQuery));
+
+            //start mobile-video-carousel-nopage.js
+            $(document).ready(function () {
+
+                var $videoMobileRoot = $(".videos-mobile-root"),
+                    $slider = $videoMobileRoot.find(".slider"),
+                    $slides = $videoMobileRoot.find(".slide"),
+                    $players = $slides.find("iframe"),
+                    $arrowLeft = $videoMobileRoot.find(".arrow-left"),
+                    $arrowRight = $videoMobileRoot.find(".arrow-right"),
+                    $allButtons = $videoMobileRoot.find(".arrow-left,.arrow-right"),
+                    slideWidth = $slides.width(),
+                    sliderTimer = setInterval(slideRight, 7000),
+                    isAnimating, allPlayers = [], video_counter = 0;
+
+
+                //Click Events
+                $allButtons.click(function () { clearInterval(sliderTimer); stopPlayers(); });
+                $arrowLeft.click(slideLeft);
+                $arrowRight.click(slideRight);
+
+                function slideLeft() {
+                    var currentIndex = parseInt($slider.css("left")) / -slideWidth;
+                    if (currentIndex == 0) slideTo($slides.length - 1);
+                    else slideTo(currentIndex - 1);
+                }
+                function slideRight() {
+                    var currentIndex = parseInt($slider.css("left")) / -slideWidth;
+                    if (currentIndex == $slides.length - 1) slideTo(0);
+                    else slideTo(currentIndex + 1);
+                }
+                function slideTo(index) {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    $slider.animate({ "left": -slideWidth * index }, 500, function () {
+                        isAnimating = false;
+                    });
+                }
+
+                $(window).resize(function () {
+                    slideWidth = $slides.width();
+                });
+
+                $players.each(function () {
+                    var currentPlayer = $f(this);
+                    allPlayers.push(currentPlayer);
+                    currentPlayer.addEvent('ready', playerReady);
+                });
+                function playerReady(player_id) {
+                    var player = $f(player_id);
+                    player.addEvent('ready', function () {
+                        player.addEvent('play', function (e) {
+                            clearInterval(sliderTimer);
+
+                            //ga('send', 'event', 'v1_homepage', 'video', player_id);
+                            dataLayer.push({ 'event': 'gaPushEvent', 'gaEventCategory': dataLayer[0].siteVersion + '_homepage', 'gaEventAction': 'click', 'gaEventLabel': player_id });
+
+                            video_counter++;
+                            var s = s_gi(omniture_rsid); s.linkTrackVars = 'eVar5,eVar7,events'; s.eVar5 = video_counter; s.eVar7 = player_id; s.linkTrackEvents = "event5"; s.events = 'event5'; s.tl(this, 'o', 'Home');
+
+                        });
+                    });
+                }
+                function stopPlayers() {
+                    var i = 0, len = allPlayers.length;
+                    for (i; i < len; i++) {
+                        allPlayers[i].api("pause");
+                    }
+                }
+
+            });
+        </script>
+        <script>
+            var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+            function loadVideo(iframe) {
+                $.getJSON(reqURL + iframe.getAttribute('cid'),
+                    function (data) {
+                        var videoNumber = (iframe.getAttribute('id'));
+                        console.log(videoNumber);
+                        var link = data.items[videoNumber].link;
+                        id = link.substr(link.indexOf("=") + 1);
+                        iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+                    }
+                );
+            }
+
+            var iframes = document.getElementsByClassName('latestVideoEmbed');
+            for (var i = 0, len = iframes.length; i < len; i++) {
+                loadVideo(iframes[i]);
+            }
+        </script>
+    </body>
+
+</html>

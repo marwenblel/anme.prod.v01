@@ -1,0 +1,31 @@
+/* Views: projects,
+   Display: block1
+*/
+#content #block-anme-content #myTabContent .projects-block1 {
+    padding: 10px;
+}
+#content #block-anme-content #myTabContent .projects-block1 .views-field-field-project-image img {
+    border: 10px solid #f7f6f6;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#content #block-anme-content #myTabContent .projects-block1 .views-field-field-project-image a:hover > img  {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow */
+}
+
+/*css for block-anme-anme-site-logo */
+@media (min-width: 300px) and (max-width: 1000px) {
+    #content #block-anme-content #myTabContent .projects-block1 .row {
+        display: block!important;
+    }
+    #content #block-anme-content #myTabContent .projects-block1 .views-field-field-project-image img {
+        width: 350px!important;
+        height: 250px!important;
+    }
+    #content #block-anme-content #myTabContent .projects-block1 .views-field-title span {
+        display: block;
+        width: 200px!important;
+    }
+}

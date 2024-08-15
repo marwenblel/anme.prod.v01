@@ -1,0 +1,109 @@
+.region-sidebar_second .block {
+   margin-bottom: 10px;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 {
+    background-color: #f7f6f6;
+    min-height: 300px;
+    width: 100%;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .more-link {
+    float: right;
+    margin-top: 40px;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 h2.block-title {
+    border-bottom: 2px solid #8ab882 !important;
+    text-indent: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d4365;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    font: 13px 'Roboto', sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    line-height: 40px;
+    display: block;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .block-content {
+    padding: 10px;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-titlee {
+
+}
+body.lang-ar #sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-title {
+    text-align: right;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-field-download-pdf-file {
+
+}
+body.lang-ar #sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-field-download-pdf-file {
+    text-align: right;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-field-download-pdf-file span.file a {
+    color: #000000;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1 .block-content .views-field-field-download-pdf-file span.file a::before {
+    content: "";
+    background: url("../../images/icons/download-icon.png") transparent 93% center no-repeat;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    padding: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+/** css for #block-anme-expert-auditors */
+#sidebar-second #block-anme-expert-auditors {
+    background-color: #f7f6f6;
+    min-height: 300px;
+}
+#sidebar-second #block-anme-expert-auditors {
+    width: 100%;
+}
+#sidebar-second #block-anme-expert-auditors h2.block-title {
+    text-indent: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d4365;
+    height: 25px;
+    display: inline-block;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    font: 13px 'Roboto', sans-serif;
+    line-height: 40px;
+    display: block;
+}
+#sidebar-second #block-anme-expert-auditors .block-content {
+    padding: 10px;
+}
+#sidebar-second #block-anme-expert-auditors .block-content ul {
+    list-style: none;
+}
+#sidebar-second #block-anme-expert-auditors .block-content ul li {
+    margin-top: 15px;
+}
+body.lang-ar #sidebar-second #block-anme-expert-auditors .block-content ul li {
+    text-align: right;
+}
+#sidebar-second #block-anme-expert-auditors .block-content ul li a {
+    color: #000000;
+}
+#sidebar-second #block-anme-expert-auditors .block-content a::before {
+    content: "";
+    background: url("../../images/icons/download-icon.png") transparent 93% center no-repeat;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    padding: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}

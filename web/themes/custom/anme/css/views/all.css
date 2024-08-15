@@ -1,0 +1,59 @@
+/* General styling for the pager container */
+.views-element-container .js-pager__items {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    font-family: Arial, sans-serif; /* Add your preferred font */
+}
+
+/* Styling for each pager item */
+.views-element-container .js-pager__items li {
+    margin: 0 5px;
+}
+
+.views-element-container .js-pager__items li a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333; /* Link color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.views-element-container .js-pager__items li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.views-element-container .js-pager__items li a span[aria-hidden="true"] {
+    font-size: 16px;
+}
+
+/* Visually hidden class for accessibility */
+.views-element-container .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Styling for the current page item */
+.views-element-container .js-pager__items li.current {
+    font-weight: bold;
+    padding: 8px 12px;
+    color: #fff; /* Current page text color */
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: #007bff;
+}
+
+.views-element-container .js-pager__items li:not(:first-child):not(:last-child) {
+    margin: 0 3px;
+}

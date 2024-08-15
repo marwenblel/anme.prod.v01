@@ -1,0 +1,13 @@
+#top-header-first .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+body.lang-ar #content-bottom {
+   width: 100%;
+}
+
+
+.sf-expanded {
+    width: 50vw!important;
+    z-index: 99999!important;
+}

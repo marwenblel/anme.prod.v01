@@ -1,0 +1,126 @@
+#sidebar-second #block-anme-views-block-anme-services-block-1 {
+    width: 100%;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row {
+    min-height: 115px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row:first-child {
+    background-color: #f8a61b;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row:nth-child(2) {
+    background-color: #00a6e4;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row:nth-child(3) {
+    background-color: #8ab882;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row:nth-child(4) {
+    background-color: #465b94;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row,
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-row a {
+    color: #ffffff;
+    font-family: Corbel;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-field-field-anme-service-icon {
+    position: absolute;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-field-field-anme-service-icon img {
+    float: left;
+    padding: 5px;
+}
+#sidebar-second body.lang-ar #block-anme-views-block-anme-services-block-1 .views-field-field-anme-service-icon img {
+    padding: 5px;
+    float: right;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 #views-field-title .field-content {
+    font: normal normal 15px 'Roboto', sans-serif;
+    word-wrap: break-word;
+}
+#sidebar-second #block-anme-views-block-anme-services-block-1 .views-field-field-anme-service-description .field-content {
+    text-align: center;
+    font: normal normal 12px 'Roboto', sans-serif;
+    word-wrap: break-word;
+    text-indent: 50px;
+}
+
+/*css for #block-anme-views-block-three-sector-products-block-2 */
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 {
+    width: 100%;
+    background-color: #f7f6f6;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item {
+
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 img {
+    width: 112px;
+    height: 97px;
+}
+
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item {
+    width: 100%;
+    min-height: 300px;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node {
+    text-align: right;
+    margin-top: 10px;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title {
+    text-align: center;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-field-sector-product-icon {
+    padding: 10px!important;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-field-sector-product-description .field-content {
+    font-family: Corbel;
+    color: #8d8c8c;
+    text-align: center;
+    padding: 10px;
+    line-height: 23.5px;
+    font-size: 20px;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow.png") no-repeat 92% 10px;
+    padding: 7px 28px 7px 10px;
+    border: 1px solid transparent;
+}
+ body.lang-ar #sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow-ar.png") no-repeat 92% 10px;
+    background-position: left;
+    padding: 7px 28px 7px 15px;
+    border: 1px solid transparent;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a:hover {
+    color: #f7ab59;
+    color: #f7ab59;
+    border-color: #46a5f7;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title  {
+    text-align: center;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title a {
+    font-family: Constantia;
+    font-weight: 600;
+    font-size: 45px;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:first-child .views-field-title a {
+    color: #9e3377;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:nth-child(2) .views-field-title a {
+    color: #08bbdc;
+}
+#sidebar-second .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:nth-child(3) .views-field-title a {
+    color: #87ba31;
+}

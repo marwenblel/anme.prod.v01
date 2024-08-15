@@ -1,0 +1,141 @@
+body.page-id-42 #block-anme-content ul {
+    list-style-type: none;
+}
+body.page-id-42 #block-anme-content ul li {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 17px;
+    position: relative;
+    font-weight: 300;
+    border: 10px solid #f7f6f6;
+    padding: 20px 20px 20px 20px;
+}
+body.lang-ar.page-id-42 #block-anme-content ul li {
+    text-align: right;
+}
+body.page-id-42 #block-anme-content ul li:hover {
+    border: 10px solid transparent;
+    box-shadow: 0 0 10px black;
+}
+body.page-id-42 #block-anme-content ul li:hover a::before {
+    background-color: #f8a61b;
+}
+body.page-id-42 #block-anme-content ul li a {
+    font-family: Corbel;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+body.page-id-42 #block-anme-content ul li a::before {
+    content: "\003F";
+    display: inline-block;
+    font: normal normal normal 15px/1 FontAwesome;
+    background-color: #d4d4d4;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 10px;
+}
+body.lang-ar.page-id-42 #block-anme-content ul li a::before {
+    margin-left: 10px;
+}
+body.page-id-42 #block-anme-content ul li a:hover::before {
+    background-color: #f8a61b;
+}
+body.page-id-42 #block-anme-views-block-three-sector-products-block-2 {
+    width: 100%;
+    background-color: #f7f6f6;
+}
+body.page-id-42 #block-anme-views-block-three-sector-products-block-2 .owl-item {
+
+}
+body.page-id-42 #block-anme-views-block-three-sector-products-block-2 img {
+    width: 112px;
+    height: 97px;
+}
+
+body.page-id-42 #block-anme-views-block-anme-services-block-1 {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************/
+
+
+/*CSS for #block-anme-views-block-three-sector-products-block-1 in hightlighted region */
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item {
+    width: 100%;
+    min-height: 300px;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node {
+    text-align: right;
+    margin-top: 10px;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title {
+    text-align: center;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-field-sector-product-icon {
+    padding: 10px!important;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-field-sector-product-description .field-content {
+    font-family: Corbel;
+    color: #8d8c8c;
+    text-align: center;
+    padding: 10px;
+    line-height: 23.5px;
+    font-size: 20px;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow.png") no-repeat 92% 10px;
+    padding: 7px 28px 7px 10px;
+    border: 1px solid transparent;
+}
+body.page-id-42 body.lang-ar .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a {
+    font-size: 13px;
+    color: #46a5f7;
+    padding-right: 20px;
+    background: url("../../images/icons/arrow-ar.png") no-repeat 92% 10px;
+    background-position: left;
+    padding: 7px 28px 7px 15px;
+    border: 1px solid transparent;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-view-node a:hover {
+    color: #f7ab59;
+    color: #f7ab59;
+    border-color: #46a5f7;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title  {
+    text-align: center;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .views-field-title a {
+    font-family: Constantia;
+    font-weight: 600;
+    font-size: 45px;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:first-child .views-field-title a {
+    color: #9e3377;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:nth-child(2) .views-field-title a {
+    color: #08bbdc;
+}
+body.page-id-42 .region-sidebar_second #block-anme-views-block-three-sector-products-block-2 .owl-item:nth-child(3) .views-field-title a {
+    color: #87ba31;
+}

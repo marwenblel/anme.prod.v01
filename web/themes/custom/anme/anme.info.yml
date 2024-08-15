@@ -1,0 +1,22 @@
+name: ANME Theme
+type: theme
+description: 'ANME Custom Theme.'
+package: core
+base theme: false
+core_version_requirement: ^10
+libraries:
+  - anme/global-styling
+regions:
+  top_header_first: 'Top header first'
+  top_header_second: 'Top header second'
+  highlighted_header_first: 'Highlighted header first'
+  highlighted_header_second: 'Highlighted header second'
+  highlighted_header_last: 'Highlighted header last'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  content_bottom: 'Content bottom'
+  footer_top: 'Footer top'
+  footer_content: 'Footer content'
+  footer: 'Footer'

@@ -1,0 +1,137 @@
+#footer-content.container {
+    max-width: 1400px;
+}
+#footer-content #block-anme-seeaswell h2.block-title,
+#footer-content #block-anme-contact h2.block-title,
+#footer-content #block-anme-simplenewssubscription h2.block-title,
+#footer-content #block-anme-bottom-social-links h2.block-title {
+    font-size: 19px;
+    color: #000;
+    text-transform: capitalize;
+    line-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px!important;
+}
+
+
+
+#footer-content #block-anme-seeaswell .block-content {
+    padding: 5px;
+}
+#footer-content #block-anme-seeaswell .block-content > div {
+    width: 180px;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+}
+#footer-content #block-anme-seeaswell .block-content a {
+    color: #343918;
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 600 !important;
+    font-family: Corbel !important;
+}
+
+body.lang-ar #footer-content #block-anme-seeaswell .block-content div {
+    text-align: right;
+}
+
+
+#footer-content #block-anme-contact .block-content {
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 18px;
+    font-family: Corbel !important;
+    padding: 5px;
+}
+#footer-content #block-anme-contact .block-content a {
+    color: #000000;
+}
+body.lang-ar #footer-content #block-anme-contact .block-content div {
+    text-align: right;
+}
+
+
+/**CSS FOR #block-anme-bottom-social-links */
+#footer-content #block-anme-bottom-social-links {
+    padding: 2px 0px 0px 0px;
+}
+#footer-content #block-anme-bottom-social-links .social-link {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    background-color: transparent;
+}
+#footer-content #block-anme-bottom-social-links .social-link a {
+    color: transparent;
+}
+#footer-content #block-anme-bottom-social-links .social-link.facebook-link {
+    background-image: url("../../images/icons/facebook-48.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#footer-content #block-anme-bottom-social-links .social-link.x-link {
+    background-image: url("../../images/icons/x-48.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#footer-content #block-anme-bottom-social-links .social-link.youtube-link {
+    background-image: url("../../images/icons/youtube-48.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#footer-content #block-anme-bottom-social-links .social-link.instagram-link {
+    background-image: url("../../images/icons/instagram-48.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#footer-content #block-anme-bottom-social-links .social-link.linkedin-link {
+    background-image: url("../../images/icons/linkedin-48.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/*CSS for #block-anme-simplenewssubscription */
+#footer-content #block-anme-simplenewssubscription .block-content #edit-mail-wrapper label {
+    display: none;
+}
+#footer-content #block-anme-simplenewssubscription .block-content #edit-mail-wrapper input#edit-mail-0-value {
+    width: 100%;
+    border: 1px solid #dcdada;
+    font-size: 16px;
+    outline: none;
+}
+#footer-content #block-anme-simplenewssubscription .block-content #edit-mail-wrapper #edit-mail-0-value--description {
+    display: none;
+}
+#footer-content #block-anme-simplenewssubscription .block-content #edit-submit--2 {
+    background: #ffa000;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    width: 100%;
+    padding: 0 10px;
+    height: 40px;
+
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+}
+#footer-content #block-anme-simplenewssubscription .block-content #edit-submit--2:hover {
+    background: #49a1f8;
+}
+#footer-content #block-anme-simplenewssubscription .block-content #edit-message {
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 18px;
+}

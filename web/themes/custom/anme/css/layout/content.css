@@ -1,0 +1,174 @@
+#content #block-anme-reem-image-block a {
+    background: orange;
+    color: white;
+    position: relative;
+    top: -72px;
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid orange;
+    border-radius: 0px;
+    text-align: center;
+    width: 209px;
+    left: 34px;
+    display: inline-block;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    font-family: Corbel;
+}
+#content #block-anme-reem-image-block a:hover {
+    background: #1b63a8;
+    border: 2px solid #1b63a8;
+}
+#content #block-anme-reem-image-block img {
+    width: 100%;
+}
+
+/* css for #block-anme-views-block-news-events-block-1 */
+#content #block-anme-views-block-news-events-block-1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item {
+
+}
+#content #block-anme-views-block-news-events-block-1 .block-content .owl-item .views-field-field-news-events-featured-image {
+    width: 100%;
+    height: 100%;
+}
+/* css for block-anme-views-block-banner-product-block-1 */
+#content #block-anme-views-block-banner-product-block-1 .views-field-field-product-banner-description .field-content {
+    position: absolute;
+    top: 25px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: right;
+    text-indent: 25px;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row {
+    background-color: #00a3da;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row div.views-field.views-field-created.col {
+    background-color: transparent;
+    padding: 0px;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row div.views-field.views-field-created.col .field-content span {
+    box-sizing: border-box;
+    color: #454545;
+    font-family: Corbel;
+    padding-left: 20px;
+    margin-top: 40px;
+    display: block;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row div.views-field.views-field-created.col time {
+    color: #000000;
+    padding: 15px;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row div.views-field.views-field-created.col a.block-link {
+    float: right;
+    padding-right: 65px;
+    color: #ffffff;
+}
+#content div#block-anme-views-block-news-events-block-1 div.block-content div.owl-item div.row div.views-field.views-field-created.col div.title a {
+    color: #fff;
+    word-wrap: break-word;
+    padding: 15px;
+    display: block;
+}
+#content #block-anme-views-block-news-events-block-1 .owl-dots {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+}
+#content #block-anme-views-block-news-events-block-1 .owl-dots .owl-dot span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: #ffffff;
+}
+#content #block-anme-views-block-news-events-block-1 .owl-dots .owl-dot span:hover {
+    background: #000000;
+}
+#content #block-anme-views-block-news-events-block-1 .owl-dots .owl-dot.active span {
+    background: #000000;
+}
+/** css for #block-anme-views-block-banner-product-block-1 */
+#content #block-anme-views-block-banner-product-block-1 .views-field-field-product-banner-link .field-content {
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+}
+#content #block-anme-views-block-banner-product-block-1 .views-field-field-product-banner-link .field-content a {
+    background: url("../../images/icons/arrow.png") #fff 93% center no-repeat;
+    color: #ffa000;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    padding: 15px 35px;
+    text-transform: uppercase;
+}
+body.lang-ar #content #block-anme-views-block-banner-product-block-1 .views-field-field-product-banner-link .field-content a {
+    background-image: url("../../images/icons/arrow-ar.png");
+    background-position: left center;
+}
+#content #block-anme-views-block-banner-product-block-1 .views-field-field-product-banner-link .field-content a:hover {
+    background-color: #00a6e4;
+}
+#content #block-anme-views-block-banner-product-block-1 .owl-dots {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+}
+#content #block-anme-views-block-banner-product-block-1 .owl-dots .owl-dot span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: #ffffff;
+}
+#content #block-anme-views-block-banner-product-block-1 .owl-dots .owl-dot span:hover {
+    background: #000000;
+}
+#content #block-anme-views-block-banner-product-block-1 .owl-dots .owl-dot.active span {
+    background: #000000;
+}
+
+
+/**css for #block-anme-breadcrumbs block **/
+#content #block-anme-breadcrumbs:before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 80px;
+    background: url("../../images/icons/pucettr.gif") left top no-repeat;
+    position: relative;
+    z-index: 33;
+    top: 25px;
+    left: -20px;
+}
+#content #block-anme-breadcrumbs nav ol {
+    list-style-type: none;
+}
+body.lang-ar #content #block-anme-breadcrumbs nav ol {
+    text-align: right;
+    margin-right: 50px;
+}
+#content #block-anme-breadcrumbs nav ol li {
+    display: inline-block;
+}
+#content #block-anme-breadcrumbs nav ol li:not(:first-child)::before {
+    content: ">";
+    margin-right: 0.5em; /* Optional: Adjust spacing as needed */
+}
+#content #block-anme-breadcrumbs nav ol li a {
+    color: #000000;;
+}
+
+
+
+

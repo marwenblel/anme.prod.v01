@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900');
+
+#top-header-first {
+    background-color: #f1efef;
+    padding: 10px 0px 0px 0px;
+    min-height: 10px;
+}
+body.lang-en #top-header-first::after,
+body.lang-fr #top-header-first::after {
+    content: "";
+    background-image: url("../../images/wrap.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    position: absolute;
+    width: 230px;
+    height: 32px;
+}
+body.lang-ar #top-header-first::after {
+    content: "";
+    background-image: url("../../images/wrap-rtl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    position: absolute;
+    width: 230px;
+    height: 32px;
+    direction: rtl;
+    right: 0;
+}
+#top-header-first .container {
+    max-width: 1180px;
+}
+#top-header-first .block {
+    padding-bottom: 5px;
+}
+#top-header-first ul {
+    list-style-type: none;
+}
+#top-header-first #block-anme-topmenu li,
+#top-header-first #block-anme-language-switcher li {
+    display: inline;
+}
+/**CSS FOR #block-anme-topmenu */
+#top-header-first #block-anme-topmenu li a {
+    padding: 0 10px;
+    text-decoration: underline;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Corbel';
+
+}
+/**CSS FOR #block-anme-tunisian-republic-block */
+#top-header-first #block-anme-tunisian-republic-block h5 {
+    margin: 0px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: 400;
+    font-family: 'Corbel';
+}
+#top-header-first #block-anme-tunisian-republic-block h6 {
+     margin: 0px;
+     font-size: 11px;
+     color: #adacac;
+     font-weight: 400;
+    font-family: 'Corbel';
+ }
+#top-header-first #block-anme-tunisian-republic-block .text {
+
+}
+/**CSS FOR #block-anme-top-social-links-block */
+#top-header-first #block-anme-top-social-links-block {
+    padding: 2px 0px 0px 0px;
+}
+#top-header-first #block-anme-top-social-links-block .social-link {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    background-color: transparent;
+}
+#top-header-first #block-anme-top-social-links-block .social-link a {
+    color: transparent;
+}
+#top-header-first #block-anme-top-social-links-block .social-link.facebook-link {
+    background-image: url("../../images/icons/facebook-icon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#top-header-first #block-anme-top-social-links-block .social-link.x-link {
+    background-image: url("../../images/icons/x-icon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#top-header-first #block-anme-top-social-links-block .social-link.youtube-link {
+    background-image: url("../../images/icons/youtube-icon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#top-header-first #block-anme-top-social-links-block .social-link.instagram-link {
+    background-image: url("../../images/icons/instagram-icon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#top-header-first #block-anme-top-social-links-block .social-link.linkedin-link {
+    background-image: url("../../images/icons/linkedin-icon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/*css for block block-anme-language-switcher*/
+#block-anme-language-switcher ul.links {
+    float: right;
+}
+body.lang-ar #block-anme-language-switcher ul.links {
+    float: left;
+}
+#block-anme-language-switcher li a {
+    text-transform: uppercase;
+    color: #adacac;
+    padding: 2px 4px;
+    font: normal normal 12px 'Roboto', sans-serif;
+}
+#block-anme-language-switcher li a:hover,
+#block-anme-language-switcher li a.language-link.is-active {
+    color: #005a98;
+}

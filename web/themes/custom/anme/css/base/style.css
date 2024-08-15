@@ -1,0 +1,85 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    padding: 0px!important;
+    margin: 0px!important;
+}
+a {
+    text-decoration: none;
+}
+p {
+    padding: 5px;
+}
+#main-wrapper {
+    padding: 20px 10px 10px 10px;
+}
+
+/* Base styles for the pager */
+.pager .pager__items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.pager .pager__item {
+    margin: 0 5px;
+}
+
+.pager .pager__item a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #007bff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active page */
+.pager .pager__item.is-active a {
+    background-color: #007bff;
+    color: #fff;
+    cursor: default;
+}
+
+/* Hover and focus states */
+.pager .pager__item a:hover,
+.pager .pager__item a:focus {
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+}
+
+/* Next and Last buttons */
+.pager .pager__item--next a,
+.pager .pager__item--last a {
+    background-color: #f8f9fa;
+}
+
+.pager .pager__item--next a:hover,
+.pager .pager__item--next a:focus,
+.pager .pager__item--last a:hover,
+.pager .pager__item--last a:focus {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Visually hidden text */
+.pager .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

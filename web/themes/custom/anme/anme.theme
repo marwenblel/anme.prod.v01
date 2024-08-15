@@ -1,0 +1,237 @@
+<?php
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\views\Views;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements template_preprocess_image_style().
+ */
+//function anme_preprocess_image_style(&$variables) {
+	
+	   // $variables['image']['#attributes']['loading'] = '';
+
+	/*print_r($variables['image']['#attributes']); exit(0);
+	
+	
+  $lazy_styles = [
+    'header_slider',
+  ];
+
+  if (in_array($variables['style_name'], $lazy_styles, TRUE)) {
+    $variables['image']['#attributes']['loading'] = '';
+  }*/
+//}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for regions.
+ */
+function anme_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+    if(isset($variables['region'])) {
+      $region = $variables['region'];
+      $suggestions[] = 'region__' . $region;
+    }
+}
+/**
+ * Implements template_preprocess_html().
+ */
+function anme_preprocess_html(&$variables) {
+
+    // Get the current language code.
+    $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    // Get the current route match object.
+    $route_match = \Drupal::service('current_route_match');
+    // Check if the current route is for a node.
+    if ($node = $route_match->getParameter('node')) {
+        if ($node instanceof \Drupal\node\NodeInterface) {
+            // Get the node ID.
+            $page_id   = $node->id();
+            // Get the node ID.
+            $node_type = $node->bundle();
+        }
+    }
+
+    // Add the language code as a class to the body tag.
+    $variables['attributes']['class'][] = 'lang-' . $language_code;
+
+    if(isset($page_id)) {
+        // Add the class to the attributes array.
+        $variables['attributes']['class'][] = 'page-id-' . $page_id;
+    }
+    if(isset($node_type)) {
+        // Add the class to the attributes array.
+        $variables['attributes']['class'][] = 'page-type-' . $node_type;
+    }
+
+    // Add is_front variable to the HTML template.
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+    // Add site_name variable to the HTML template.
+    $variables['site_name'] = \Drupal::config('system.site')->get('name');
+}
+/**
+ * Implements hook_form_alter().
+ */
+function anme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    // Target the search form by its unique form ID.
+    if ($form_id == 'search_block_form') {
+        // Add placeholder text to the search input field.
+        $form['keys']['#attributes']['placeholder'] = t('Search ...');
+    }
+    if ($form_id == 'simplenews_subscriptions_block_1') {
+        // Add placeholder text to the search input field.
+        $form['mail']['widget'][0]['value']['#attributes']['placeholder'] = t('Your e-mail here');
+
+    }
+}
+
+function anme_preprocess_node(array &$variables) {
+    // Check if the node is available in the variables.
+    if (isset($variables['node'])) {
+        // Get the node ID.
+        $nid = $variables['node']->id();
+
+        // Add node ID to variables for use in Twig template.
+        $variables['node_id'] = $nid;
+    }
+
+    // Get the current language code.
+    $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['language_code'] = $language_code;
+
+    $node = Node::load($nid);
+    if ($node && $node->getType() == 'sector') {
+
+        // Example of setting a dynamic parameter like project_id.
+        $sector_id = $nid; // Replace with your dynamic value.
+
+        // Load the view.
+        $view = Views::getView('projects');
+
+        if ($view) {
+            // Set the display.
+            $view->setDisplay('block_1');
+
+            // Set arguments (parameters).
+            $view->setArguments([$sector_id]);
+
+            // Execute the view.
+            $view->preExecute();
+            $view->execute();
+
+            // Render the view output.
+            $view_output = $view->buildRenderable('block_1', [$sector_id]);
+
+            // Render the output as markup.
+            $variables['projects_embedded_view'] = Markup::create(\Drupal::service('renderer')->renderPlain($view_output));
+        }
+
+
+
+        // Load the view.
+        $downloads_view = Views::getView('downloads');
+
+        if ($downloads_view) {
+            // Set the display.
+            $downloads_view->setDisplay('block_2');
+
+            // Set arguments (parameters).
+            $downloads_view->setArguments([$sector_id]);
+
+            // Execute the view.
+            $downloads_view->preExecute();
+            $downloads_view->execute();
+
+            // Render the view output.
+            $downloads_view_output = $downloads_view->buildRenderable('block_2', [$sector_id]);
+
+            // Render the output as markup.
+            $variables['downloads_embedded_view'] = Markup::create(\Drupal::service('renderer')->renderPlain($downloads_view_output));
+        }
+
+        // Load the news view.
+        $news_view = Views::getView('news_events');
+
+        if ($news_view) {
+            // Set the display.
+            $news_view->setDisplay('block_2');
+
+            // Set arguments (parameters).
+            $news_view->setArguments([$sector_id]);
+
+            // Execute the view.
+            $news_view->preExecute();
+            $news_view->execute();
+
+            // Render the view output.
+            $news_view_output = $news_view->buildRenderable('block_2', [$sector_id]);
+
+            // Render the output as markup.
+            $variables['news_view_embedded_view'] = Markup::create(\Drupal::service('renderer')->renderPlain($news_view_output));
+        }
+
+
+        // Load the useful_links view.
+        $useful_links_view = Views::getView('useful_links');
+
+        if ($useful_links_view) {
+            // Set the display.
+            $useful_links_view->setDisplay('block_1');
+
+            // Set arguments (parameters).
+            $useful_links_view->setArguments([$sector_id]);
+
+            // Execute the view.
+            $useful_links_view->preExecute();
+            $useful_links_view->execute();
+
+            // Render the view output.
+            $useful_links_view_output = $useful_links_view->buildRenderable('block_1', [$sector_id]);
+
+            // Render the output as markup.
+            $variables['useful_links_view_embedded_view'] = Markup::create(\Drupal::service('renderer')->renderPlain($useful_links_view_output));
+        }
+
+
+        // Load the studies view.
+        $studies_view = Views::getView('studies');
+
+        if ($studies_view) {
+            // Set the display.
+            $studies_view->setDisplay('block_1');
+
+            // Set arguments (parameters).
+            $studies_view->setArguments([$sector_id]);
+
+            // Execute the view.
+            $studies_view->preExecute();
+            $studies_view->execute();
+
+            // Render the view output.
+            $studies_view_output = $studies_view->buildRenderable('block_1', [$sector_id]);
+
+            // Render the output as markup.
+            $variables['studies_view_embedded_view'] = Markup::create(\Drupal::service('renderer')->renderPlain($studies_view_output));
+        }
+    }
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

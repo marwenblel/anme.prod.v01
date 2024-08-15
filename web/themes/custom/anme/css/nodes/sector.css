@@ -1,0 +1,151 @@
+body.page-type-sector #sidebar-second {
+    margin-top: 30px;
+}
+body.page-type-sector #content #block-anme-content .sector-node {
+    min-height: 500px;
+}
+
+
+body.page-type-sector #content #block-anme-content .sector-node #myTabContent .field-sector-content img {
+    width: 100%;
+}
+/* css for block ##block-anme-views-block-downloads-block-1-sector */
+#sidebar-second #block-anme-views-block-downloads-block-1-sector {
+    background-color: #f7f6f6;
+    min-height: 300px;
+    width: 100%;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .more-link {
+    float: right;
+    margin-top: 40px;
+}
+body.page-type-sector #content #block-anme-content .sector-node #myTab li a {
+    display: block;
+    padding: 13px 20px 16px;
+    color: #8d8c8c;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    top: 2px;
+    border: none;
+}
+body.page-type-sector #content #block-anme-content .sector-node #myTab li a.active {
+    display: block;
+    padding: 13px 20px;
+    color: #00a3da;
+    border-bottom: 3px solid #00a3da;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector h2.block-title {
+    text-indent: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d4365;
+    height: 25px;
+    display: inline-block;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    font: 13px 'Roboto', sans-serif;
+    line-height: 40px;
+    display: block;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content {
+    padding: 10px;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-titlee {
+
+}
+body.lang-ar #sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-title {
+    text-align: right;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-field-download-pdf-file {
+
+}
+body.lang-ar #sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-field-download-pdf-file {
+    text-align: right;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-field-download-pdf-file span.file a {
+    color: #000000;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+#sidebar-second #block-anme-views-block-downloads-block-1-sector .block-content .views-field-field-download-pdf-file span.file a::before {
+    content: "";
+    background: url("../../images/icons/download-icon.png") transparent 93% center no-repeat;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    padding: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+/*************************************/
+
+
+body.page-type-sector #content #block-anme-content .sector-node #tab1 {
+}
+body.page-type-sector #content #block-anme-content .sector-node #tab1 p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: Corbel !important;
+    text-indent: 15px;
+}
+body.page-type-sector #content #block-anme-content .sector-node #tab1 ul {
+    list-style: none;
+}
+body.page-type-sector #content #block-anme-content .sector-node #tab1 ul li {
+    padding-left: 25px;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 17px;
+    position: relative;
+    font-weight: 300;
+    text-indent: 10px;
+}
+body.lang-ar.page-type-sector #content #block-anme-content .sector-node #tab1 ul li {
+    text-align: right;
+}
+body.page-type-sector #content #block-anme-content .sector-node #tab1 ul li::before {
+    content: "";
+    background: url('../../images/icons/puce.png');
+    height: 10px;
+    width: 13px;
+    display: inline-block;
+    margin-right: 10px;
+}
+body.lang-ar.page-type-sector #content #block-anme-content .sector-node #tab1 ul li::before {
+    margin-left: 10px;
+}
+body.page-type-sector #content #block-anme-content .sector-node #tab1 table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed */
+    margin: 20px 0; /* Adds margin around the table */
+}
+
+body.page-type-sector #content #block-anme-content .sector-node #tab1 th,body.page-type-page #content #block-anme-content .sector-node #tab1 td {
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+body.lang-ar.page-type-sector #content #block-anme-content .sector-node #tab1 th,body.lang-ar.page-type-page #content #block-anme-content .sector-node #tab1 td {
+    text-align: right;
+}
+
+body.page-type-sector #content #block-anme-content .sector-node #tab1 th {
+    background-color: #f4f4f4; /* Light gray background for headers */
+    font-weight: bold; /* Bold text for headers */
+}
+
+body.page-type-sector #content #block-anme-content .sector-node #tab1 tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for even rows */
+}
+
+body.page-type-sector #content #block-anme-content .sector-node #tab1 tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
