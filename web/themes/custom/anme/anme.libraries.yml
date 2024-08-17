@@ -63,6 +63,7 @@ global-styling:
     js/top-toggle.js: {}
     js/nav-toggle.js: {}
     js/calls-4-tenders-page.js: {}
+    js/logo-url.js: {}
 
 
   dependencies:
