@@ -36,6 +36,7 @@ global-styling:
       css/pages/tp.css: {}
       css/pages/press.css: {}
       css/pages/assistance.css: {}
+      css/pages/proactive.css: {}
       css/pages/search.css: {}
 
       css/nodes/sector.css: {}

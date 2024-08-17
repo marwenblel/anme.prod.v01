@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Tajawal);
+
+      body {
+        direction: rtl;
+        background: #ffffff !important;
+        font-family: "tajawal" !important;
+        overflow-x: hidden;
+      }
+
+      h3 {
+        color: #32c19a;
+      }
+
+      .main-content {
+        width: 100% !important;
+        padding-top: 20px;
+
+        background: white;
+      }
+
+      .thead_dark {
+        background: #00a3da;
+        color: white;
+      }
+
+      .btn-download {
+        background: #00a3da !important;
+        border-radius: 50% !important;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        vertical-align: top !important;
+        padding: 5px;
+        border: none;
+        color: white;
+      }
+
+      div.dataTables_wrapper div.dataTables_info {
+        padding-top: 0px !important;
+        white-space: nowrap;
+        color: #64b99c !important;
+      }
+
+      table.dataTable>tbody>tr.child ul.dtr-details {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+      }
+
+      .table.dataTable.dtr-inline.collapsed>tbody>tr[role=row]>td:first-child:before,
+      table.dataTable.dtr-inline.collapsed>tbody>tr[role=row]>th:first-child:before {
+        top: 9px;
+        left: 4px;
+        height: 14px;
+        width: 14px;
+        display: block;
+        position: absolute;
+        color: white;
+        border: 2px solid white;
+        border-radius: 14px;
+        box-shadow: 0 0 3px #444;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 14px;
+        content: "+";
+        background-color: #60b6ab;
+      }
+
+      .table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before,
+      table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+        content: "-";
+        background-color: #d33333;
+      }
+
+      input#myInputTextField {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
+
+      .page-item.active .page-link {
+        z-index: 1;
+        color: #fff !important;
+        background-color: #00a3da !important;
+        border-color: #00a3da !important;
+        border-radius: 8px !important;
+      }
+
+      .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #00a3da !important;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+      }
+
+      .dataTables_info,
+      .dataTables_length {
+        float: right;
+      }
+
+      #files_list_paginate,
+      .dataTables_filter {
+        float: left;
+      }
+
+
+      td {
+        text-align: right;
+      }
+
+      th.th_text.sorting select {
+        width: 0px !important;
+      }
+
+      th.th_text.sorting:nth-child(4) select {
+        width: 150px !important;
+      }
+
+      th.th_text.sorting:nth-child(1) select {
+        width: 200px !important;
+      }
+
+      th.th_text.sorting:nth-child(3) select,
+      th.th_text.sorting:nth-child(2) select,
+      th.th_text.sorting:nth-child(5) select {
+        display: none;
+      }
+
+      .table-filter-container {
+        width: 50%;
+      }
+
+      select {
+        max-width: 440px;
+      }
+    </style>
+
+
+
+    <!--   External CSS  -->
+    <title>ANME</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://anme.tn/sites/default/files/icon.png" type="image/png">
+  </head>
+
+  <body style="width: 80%;margin: 0 auto;">
+    <header>
+      <div class="row">
+        <div><a style="padding: 60px;" href="https://anme.tn" title="Accueil" rel="home" class="header__logo"
+            id="logo"><img src="https://anme.tn/sites/default/files/anmear_1.png" alt="Accueil"
+              class="header__logo-image"></a>
+        </div>
+      </div>
+    </header>
+    <div class="main-content">
+      <div style="width: 20%;float: left;">
+        <label>بحث</label>
+        <input id="myInputTextField" type="text"></form>
+      </div>
+      <p id="table-filter">النوع <select class="custom-select custom-select-sm form-control form-control-sm"
+          style="width:300px">
+          <option value="">الكل</option>
+          <option>Decret</option>
+          <option>Arrete</option>
+          <option>Loi</option>
+        </select>
+      </p>
+
+
+      <table id="files_list" class="table table-striped dt-responsive  " style="width:100%">
+
+        <thead class="thead_dark">
+          <tr>
+            <th class="th_text">العنوان</th>
+            <th class="th_text">النص القانوني</th>
+            <th class="th_text">النوع</th>
+            <th class="th_text">التاريخ</th>
+            <th class="th_text">مرجع النص</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>الوكالة الوطنية للتحكم في الطاقة</td>
+            <td>المرسوم عدد 12 لسنة 2022 والمنقح للقانون عدد 72 لسنة 2004</td>
+            <td>Decret</td>
+            <td>21/02/2022</td>
+            <td><a href="/beta2/arrete/files/Décret-loi2022_12Arabe.pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button></a></td>
+          </tr>
+          <tr>
+            <td>الوكالة الوطنية للتحكم في الطاقة</td>
+            <td>القرار المؤرخ في 24 جويلية 2019 والمتعلق بتأشير الغسالات الاوتوماتيكية</td>
+            <td>Arrete</td>
+            <td>24/07/2019</td>
+            <td><a href="/beta2/arrete/files/arrete certif lave linges.pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button></a></td>
+          </tr>
+          <tr>
+            <td>الوكالة الوطنية للتحكم في الطاقة</td>
+            <td>مرسوم عدد 8 لسنة 1985 مؤرخ في 14 سبتمبر 1985 يتعلق بالإقتصاد في الطاقة والمصادق عليه بالقانون عدد 92
+              لسنة 1985
+              مؤرخ ف 22 نوفمبر 1985</td>
+            <td>Decret</td>
+            <td>14/09/1985</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>الوكالة الوطنية للتحكم في الطاقة</td>
+            <td>قانون عدد 72 لسنة 2004 مؤرخ في 2 أوت 2004 والمتعلق بالتحكم في الطاقة كما تم تنقيحه وإتمامه بالقانون
+              عدد 7 لسنة
+              2009 المؤرخ في 9 فيفري 2009</td>
+            <td>
+              <div>Loi2009_7</div>
+              <div>Loi2004_72</div>
+            </td>
+            <td>
+              <div>09/02/2009</div>
+              <div>02/08/2004</div>
+            </td>
+            <td><a href="/beta2/arrete/files/Loi2004_72Arabe (2).pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button></a>
+              <a href="/beta2/arrete/files/Loi2009_7Arabe.pdf"> <button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a>
+            </td>
+          </tr>
+          <!--------------------------------صندوق الإنتقال الطاقي------------------------------------->
+          <tr>
+            <td>صندوق الإنتقال الطاقي</td>
+            <td>قرار من وزير الطاقة والمناجم والانتقال الطاقي مؤرخ في 1سبتمبر 2020 يتعلق بالمصادقة على دليل إجراءات
+              ضبط طرق
+              سير عمل اللجنة الفنية المكلفة بإبداء الرأي في إسناد تدخلات صندوق الانتقال الطاقي</td>
+            <td>
+              <div>Arrete2020_2214</div>
+              <div>GUIDE-FTE-GLOBAL</div>
+            </td>
+            <td>
+              <div>01/09/2020</div>
+              <div>04/2020</div>
+            </td>
+            <td><a href="/beta2/arrete/files/Arrete2020_2214Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a><a href="/beta2/arrete/files/GUIDE-FTE-GLOBAL- AR.pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>صندوق الإنتقال الطاقي</td>
+            <td>أمر حكومي عـدد 983 لسنة 2017 مؤرخ في 26 جويلية 2017 يتعلـق بضبط قواعد تنظيم وتسيير وكيفية تدخل صندوق
+              الانتقال
+              الطاقي</td>
+            <td>Decret2017_983</td>
+            <td>26/07/2017</td>
+            <td><a href="/beta2/arrete/files/Decret2017_983Arabe (8).pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>صندوق الإنتقال الطاقي</td>
+            <td>القانون عدد 54 لسنة 2013 المؤرخ في 30 ديسمبر 2013 والمتعلق بقانون المالية لسنة 2014 (الفصلين 67 و
+              68) كما تم
+              تنقيحه بالقانون عدد 54 لسنة 2014 المتعلق بقانون المالية التكميلي لسنة 2014 (الفصل 3 منه المتعلق بإحداث
+              صندوق
+              الإنتقال الطّاقي)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <!-----------------------------في قطاع الطاقات المتجدّدة------------------------------------------------>
+          <tr>
+            <td>في قطاع الطاقات المتجدّدة</td>
+            <td>قانون عدد 12 لسنة 2015 مؤرخ في 11 ماي 2015 يتعلق بإنتاج الكهرباء من الطاقات المتجدّدة</td>
+            <td>Loi2015_12</td>
+            <td>11/05/2015</td>
+            <td><a href="/beta2/arrete/files/Loi2015_12Arabe (5).pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>في قطاع الطاقات المتجدّدة</td>
+            <td>الأمر عدد 1123 لسنة 2016 مؤرخ ف 24 أوت 2016 يتعلق بضبط شروط وإجراءات إنجاز مشارع إنتاج وبيع الكهرباء
+              من
+              الطاقات المتجدّدة</td>
+            <td>Decret2016_1123</td>
+            <td>24/08/2016</td>
+            <td><a href="/beta2/arrete/files/Decret2016_1123Arabe (6).pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>في قطاع الطاقات المتجدّدة</td>
+            <td>قرار من وزيرة الطاقة والمناجم والطاقات المتجددة مؤرخ في 9 فيفري 2017 يتعلق بالمصادقة على كراس الشروط
+              الخاص
+              بضبط الشروط الفنية لربط وتصريف الطاقة الكهربائية المنتجة من منشآت الطاقات المتجددة المرتبطة بالشبكة
+              الوطنية
+              للكهرباء في الجهد المنخفض</td>
+            <td>Arrete2017_0396</td>
+            <td>09/02/2017</td>
+            <td><a href="/beta2/arrete/files/Arrete2017_0396Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>في قطاع الطاقات المتجدّدة</td>
+            <td>قرار من وزيرة الطاقة والمناجم والطاقات المتجددة مؤرخ في 9 فيفري 2017 يتعلق بالمصادقة على كراس الشروط
+              الخاص
+              بضبط الشروط الفنية لربط وتصريف الطاقة الكهربائية المنتجة من منشآت الطاقات المتجددة المرتبطة بالشبكة
+              الوطنية
+              للكهرباء في الجهدين العالي والمتوسط</td>
+            <td>Arrete2017_0395</td>
+            <td>09/02/2017</td>
+            <td><a href="/beta2/arrete/files/Arrete2017_0395Arabe (1).pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <!-----------------------------قطاع ترشيد إستهلاك الطاقة------------------------------------------------>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسطة ووزير التجارة والصناعات التقليدية مؤرخ
+              في 24
+              أكتوبر 2005 يتعلق بالنجاعة الدنيا في استهلاك الطاقة بالنسبة إلى الثلاجات والمجمدات والآلات المزدوجة.
+            </td>
+            <td>Arrete2005_824</td>
+            <td>24/10/2005</td>
+            <td><a href="/beta2/arrete/files/Arrete2005_824Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار من وزيري الصناعة والطاقة والتجارة مؤرخ في 10 سبتمبر 2004 يتعلق بتأشر الثلاجات والمجمدات والآلات
+              المزدوجة
+            </td>
+            <td>Arrêté2004_792</td>
+            <td>10/09/2014</td>
+            <td><a href="/beta2/arrete/files/Arrete2004_792Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسطة مؤرخ في 11 جوان 2007 يتعلق بالمصادقة على
+              كراس الشروط
+              الخاصة بالتدقيق في الطاقة على الرسم البياني ف قطاعي السكن والخدمات</td>
+            <td>Arrete2007_452</td>
+            <td>11/06/2007</td>
+            <td><a href="/beta2/arrete/files/Arrete2007_452Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير التجهيز والإسكان والتهيئة الترابيّة ووزير الصناعة والطاقة والمؤسسات الصغرى
+              والمتوسّطة مؤرخ
+              في 23 جويلية 2008 يتعلق بضبط الخاصيات الفنية الدنيا التي تهدف إلى الإقتصاد في الطاقة في مشاريع تشييد
+              وتوسعة
+              المباني المعدّة للمكاتب أو ما يماثلها</td>
+            <td>Arrete2008_693</td>
+            <td>23/07/2008</td>
+            <td><a href="/beta2/arrete/files/Arrete2008_693Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسّطة ووزير التجارة والصناعات التقليديّة
+              مؤرخ في 27
+              أكتوبر 2008 يتعلق بالنجاعة الدنيا في استهلاك الطاقة بالنسبة إلى الثلاجات والمجمدات والآلات المزدوج
+            </td>
+            <td>Arrêté2008_1165</td>
+            <td>21/10/2009</td>
+            <td><a href="/beta2/arrete/files/Arrete2008_1165Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسّطة ووزير التجارة والصناعات التقليديّة
+              مؤرخ في 21
+              أفريل 2009 يتعلق بتأشير أجهزة التكييف الفردي ذات قدرة تبريد أقل من 12 كيلوواط</td>
+            <td>Arrêté2009_542</td>
+            <td>21/04/2009</td>
+            <td><a href="/beta2/arrete/files/Arrete2009_542Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير التجهيز والإسكان والتهيئة الترابيّة ووزير الصناعة والطاقة والمؤسسات الصغرى
+              والمتوسّطة مؤرخ
+              في 01 جوان 2009 يتعلق بضبط الخاصيات الفنية الدنيا التي تهدف إلى الإقتصاد في الطاقة في مشاريع تشييد
+              وتوسعة
+              المباني المعدّة للسكن</td>
+            <td>Arrete2009_739</td>
+            <td>01/06/2009</td>
+            <td><a href="/beta2/arrete/files/Arrete2009_739Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسطة ووزير التجارة والصناعات التقليدية مؤرخ
+              في 30
+              جوان 2009 يتعلق بالنجاعة الدنيا في استهلاك الطاقة بالنسبة لأجهزة التكييف الفردي ذات قدرة تبريد أقل من
+              12 كيلوواط
+            </td>
+            <td>Arrete2009_861</td>
+            <td>30/06/2009</td>
+            <td><a href="/beta2/arrete/files/Arrete2009_861Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والتكنولوجيا ووزير التجارة والصناعات التقليدية مؤرخ في 18 أوت 2010 يتعلق
+              بمنع ترويج
+              الفوانيس المتوهجة العادية ذات الاستعمال المنزلي وذات قدرة تساوي أو تفوق 100 واط وتوتر يساوي أو يفوق عن
+              100 فولت
+            </td>
+            <td>Arrete2010_1213</td>
+            <td>18/08/1010</td>
+            <td><a href="/beta2/arrete/files/Arrete2010_1213Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والتكنولوجيا ووزير التجارة والصناعات التقليدية مؤرخ في 27 سبتمبر 2010
+              يتعلق
+              بالنجاعة الدنيا في استهلاك الطاقة بالنسبة لأجهزة التكييف الفردي ذات قدرة تبريد أقل من 12 كيلوواط</td>
+            <td>Arrete2010_1384</td>
+            <td>27/09/1010</td>
+            <td><a href="/beta2/arrete/files/Arrete2010_1384Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار من وزير الصناعة والتكنولوجيا مؤرخ في 12 ماي 2011 يتعلق بالمصادقة على كراس الشروط الخاص بضبط
+              الشروط الفنية
+              لربط وتصريف الطاقة الكهربائية لمنشآت التوليد المؤتلف والطاقات المتجددة بالشبكة الوطنية للكهرباء</td>
+            <td>Arrete2011_0468</td>
+            <td>12/05/2011</td>
+            <td><a href="/beta2/arrete/files/Arrete2011_0468Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار من وزير الصناعة والتكنولوجيا ووزير التجارة والسياحة مؤرخ في 12 أوت 2011 يتعلق بالنجاعة الدنيا
+              في استهلاك
+              الطاقة بالنسبة لأجهزة التكييف الفردي ذات قدرة تبريد أقل من 12 كيلوواط</td>
+            <td>Arrete2011_0977</td>
+            <td>12/08/2011</td>
+            <td><a href="/beta2/arrete/files/Arrete2011_0977Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>الأمر عدد 3232 لسنة 2002 المؤرخ ف 3 ديسمبر 2002 والمتعلق بالتولد المؤتلف كما تم تنقحه بالأمر عدد
+              3377 لسنة
+              2009 المؤرخ في 2 نوفمبر 2009</td>
+            <td>
+              <div>Decret2002_3232</div>
+              <div>Decret2009_3377<div>&nbsp;</div>
+              </div>
+            </td>
+            <td>
+              <div>03/12/2002</div>
+              <div>02/11/2009</div>
+            </td>
+            <td><a href="/beta2/arrete/files/Decret2002_3232Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a> <a href="/beta2/arrete/files/Decret2009_3377Arabe (1).pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>قرار مشترك من وزير الصناعة والطاقة والمؤسسات الصغرى والمتوسطة ووزير التجارة والصناعات التقليدية مؤرخ
+              في 24
+              أكتوبر 2005 يتعلق بالنجاعة الدنيا في استهلاك الطاقة بالنسبة إلى الثلاجات والمجمدات والآلات المزدوج
+            </td>
+            <td>Loi2005_82</td>
+            <td>15/08/2005</td>
+            <td><a href="/beta2/arrete/files/Loi2005_82Arabe.pdf"><button class="btn btn-sm btn-download btn-info ">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>أمر عدد 2144 لسنة 2004 مؤرخ في 2 سبتمبر 2004 يتعلق بضبط شروط خضوع المؤسسات المستهلكة للطاقة للتدقيق
+              الإجباري
+              والدوري في الطاقة ومحتوى التدقيق ودوريته وأصناف المشاريع المستهلكة للطاقة الخاضعة للاستشارة الوجوبية
+              المسبقة
+              وطرق إجرائها وكذلك شروط ممارسة نشاط الخبراء المدققين.</td>
+            <td>Decret2004_2144</td>
+            <td>02/09/2004</td>
+            <td><a href="/beta2/arrete/files/Decret2004_2144Arabe (1).pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>الأمر عدد 2145 لسنة 2004 المؤرخ في 2 سبتمبر 2004 يتعلق بتأشير التجهيزات والآلات والمعدّات
+              الكهرومنزلّة</td>
+            <td>Decret2004_2145</td>
+            <td>02/09/2004</td>
+            <td><a href="/beta2/arrete/files/Decret2004_2145Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>الأمر عدد 4193 لسنة 2007 المؤرخ في 27 ديسمبر 2007 كما تم تنقيحه بالأمر عدد 3210 لسنة 2008 يتعلق بضبط
+              نسبة
+              المعلوم الموظّفة على الفوانيس والأنابيب</td>
+            <td>Decret2007_4193</td>
+            <td>27/12/2007</td>
+            <td><a href="/beta2/arrete/files/Decret2007_4193Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <!---g1--->
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>الأمر عدد 2144 لسنة 2004 المؤرخ في 02 سبتمبر 2004 كما تم تنقيحه بالأمر عدد 2269 لسنة 2009 المؤرخ في
+              31 جويلية
+              2009 والمتعلق بضبط شروط خضوع المؤسسات المستهلكة للطاقة للتدقيق الإجباري والدوري في الطاقة ومحتوى
+              التدقيق ودوريته
+              وأصناف المشاريع المستهلكة للطاقة الخاضعة للاستشارة الوجوبية المسبقة وطرق إجرائها وكذلك شروط ممارسة
+              نشاط الخبراء
+              المدققين</td>
+            <td>
+              <div>Decret2009_2269</div>
+              <div>Decret2010_144</div>
+            </td>
+            <td>
+              <div>31/07/2009</div>
+              <div>01/02/2010</div>
+            </td>
+            <td><a href="/beta2/arrete/files/Decret2009_2269Arabe.pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a> <a href="/beta2/arrete/files/Decret2010_144Arabe.pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+          <!---g2--->
+          <tr>
+            <td>قطاع ترشيد إستهلاك الطاقة</td>
+            <td>الأمر الحكومي عدد 191 لسنة 2017 مؤرخ في 25 جانفي 2017 يتعلق بتحديد قائمات المواد الأوليّة والمواد
+              نصف المصنعة
+              اللازمة لصناعة التجهيزات المستعملة للتحكم في الطاقة أو في ميدان الطاقات المتجدّدة والتجهيزات المستعملة
+              للتحكم في
+              الطاقة أو في ميدان الطاقات المتجدّدة والمؤهلة للإنتفاع بالحوافز الجبائيّة المنصوص علها بالفقرة 7.21 من
+              الباب
+              الثاني من الأحكام التمهيديّة لتعريف المعاليم الديوانّة عند التورد والنقطة 18 مكرر من الجدول ب الملحق
+              بمجلة
+              الآداء على القيمة المضافة كما تم تنقحه وإتمامه بالأمر الحكومي عدد 234 لسنة 2018 مؤرخ في 12 مارس 2018
+            </td>
+            <td>
+              <div>Decret2017_191<div>Decret2018_234</div>
+              </div>
+            </td>
+            <td>
+              <div>25/01/2015</div>
+              <div>12/03/2018</div>
+            </td>
+            <td><a href="/beta2/arrete/files/Decret2017_191Arabe (3).pdf"><button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a> <a href="/beta2/arrete/files/Decret2018_234Arabe.pdf"> <button
+                  class="btn btn-sm btn-download btn-info "> <i class="fas fa-arrow-circle-down"></i>
+                </button> </a></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>العنوان</th>
+            <th>النص القانوني</th>
+            <th>النوع</th>
+            <th>التاريخ</th>
+            <th>مرجع النص</th>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+
+  </body>
+
+</html>
+<!-- partial -->
+<script>
+  $(document).ready(function () {
+    // var table = $('#files_list').DataTable({
+    //     "aLengthMenu": [
+    //         [5, 10, 25, -1],
+    //         [5, 10, 25, "All"]
+    //     ],
+    //     "iDisplayLength": 10,
+
+    //     "language": {
+    //         "sProcessing": "جارٍ التحميل...",
+    //         "sLengthMenu": "أظهر _MENU_ مدخلات",
+    //         "sZeroRecords": "لم يعثر على أية سجلات",
+    //         "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+    //         "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+    //         "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+    //         "sInfoPostFix": "",
+    //         "sSearch": "ابحث:",
+    //         "sUrl": "",
+    //         "oPaginate": {
+    //             "sFirst": "الأول",
+    //             "sPrevious": "السابق",
+    //             "sNext": "التالي",
+    //             "sLast": "الأخير"
+    //         }
+    //     }
+
+    //    
+
+    // });
+    var table = $('#files_list').DataTable({
+      "language": {
+        "sProcessing": "جارٍ التحميل...",
+        "sLengthMenu": "أظهر _MENU_ مدخلات",
+        "sZeroRecords": "لم يعثر على أية سجلات",
+        "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+        "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+        "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+        "sInfoPostFix": "",
+        "sSearch": "ابحث:",
+        "sUrl": "",
+        "oPaginate": {
+          "sFirst": "الأول",
+          "sPrevious": "السابق",
+          "sNext": "التالي",
+          "sLast": "الأخير"
+        }
+      },
+      "searching": true,
+      "sorting": false,
+
+      dom: 'lr<"table-filter-container">tip',
+      initComplete: function (settings) {
+        this.api()
+          .columns()
+          .every(function () {
+            var column = this;
+            var select = $('<select><option value=""></option></select>')
+              .appendTo($(column.header()).empty())
+              .on('change', function () {
+                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                column.search(val ? '^' + val + '$' : '', true, false).draw();
+              });
+            console.log(column);
+            column
+              .data()
+              .unique()
+              .each(function (d, j) {
+                select.append('<option value="' + d + '">' + d + '</option>');
+
+              });
+          });
+        var api = new $.fn.dataTable.Api(settings);
+        $('.table-filter-container', api.table().container()).append(
+          $('#table-filter').detach().show()
+        );
+        $('#myInputTextField').keyup(function () {
+          table.search($(this).val()).draw();
+        })
+        $('#table-filter select').on('change', function () {
+          table.search(this.value).draw();
+        });
+      }
+    });
+
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body.page-id-43 #block-anme-content .basic-page-node .field-body  {
+    background: #ccc;
+    padding: 50px;
+}
+body.page-id-43 #block-anme-content .basic-page-node .field-body table td > a > img {
+    width: auto !important;
+    height: 40px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin-top: 0px !important;
+}
+body.page-id-43 #block-anme-content .basic-page-node .field-body table td strong {
+    text-align: center;
+    word-break: break-word;
+    hyphens: auto;
+    clear: both;
+    display: block;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 700;
+}
