@@ -2,3 +2,60 @@ body.path-news #main.row,
 body.path-news #content.col-8 {
     all: unset!important;
 }
+
+.news-events #views-exposed-form-news-events-page-1 {
+    padding: 10px;
+}
+/* Container styling */
+.news-events .js-form-item {
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.news-events .js-form-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Select box styling */
+.news-events .js-form-item .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Button styling */
+.news-events .form-actions .button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.news-events .form-actions .button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+    body.path-news #main-wrapper.container {
+        all: unset!important;
+    }
+    body.path-news #main.row,
+    body.path-news #content.col-8 {
+        all: unset!important;
+    }
+    body.path-news .news-events .views-view-grid .row {
+        all: unset!important;
+    }
+}

@@ -43,6 +43,12 @@
         text-align: center;
     }
 }
+/*css for block-anme-breadcrumbs */
+@media (min-width: 300px) and (max-width: 768px) {
+    #block-anme-breadcrumbs {
+        margin-left: 40px;
+    }
+}
 
 /*css for block-anme-search-form */
 @media (min-width: 300px) and (max-width: 768px) {

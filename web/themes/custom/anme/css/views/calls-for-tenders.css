@@ -3,6 +3,10 @@ body.path-calls-for-tenders #content.col-8 {
     all: unset!important;
 }
 
+
+.calls-for-tenders #views-exposed-form-calls-for-tenders-page-1 {
+    padding: 10px;
+}
 /* Container styling */
 .calls-for-tenders .js-form-item {
     margin-bottom: 15px;
