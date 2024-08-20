@@ -49,6 +49,7 @@ global-styling:
       css/views/projects.css: {}
       css/views/calls-for-tenders.css: {}
       css/views/news.css: {}
+      css/views/useful-links.css: {}
   js:
     js/bootstrap/bootstrap.min.js: {}
     js/responsive-all.js: {}

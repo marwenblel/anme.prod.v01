@@ -1,0 +1,27 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+body.path-useful-links #main.row,
+body.path-useful-links #content.col-8 {
+    all: unset!important;
+}
+body.path-useful-links .useful-links .views-row {
+    border: 10px solid #f7f6f6;
+    padding: 20px 20px 20px 60px;
+    margin-bottom: 10px;
+    position: relative;
+}
+body.path-useful-links .useful-links .views-row .views-field-title span {
+    color: #000000;
+    font-family: Corbel !important;
+}
+body.path-useful-links .useful-links .views-row .views-field-title::before {
+    content: "\f0c1";
+    display: block;
+    font: normal normal normal 20px/1 FontAwesome;
+    color: #d4d4d4;
+    position: absolute;
+    left: 15px;
+    top: 25px;
+}
+body.path-useful-links .useful-links .views-row .views-field-title:hover::before {
+    color: #ffa000;
+}

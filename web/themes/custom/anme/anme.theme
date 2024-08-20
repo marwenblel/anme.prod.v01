@@ -82,7 +82,7 @@ function anme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_stat
     }
     if ($form_id == 'simplenews_subscriptions_block_1') {
         // Add placeholder text to the search input field.
-        $form['mail']['widget'][0]['value']['#attributes']['placeholder'] = t('Your e-mail here');
+        $form['mail']['widget'][0]['value']['#attributes']['placeholder'] = t('Enter your email address');
 
     }
 }
